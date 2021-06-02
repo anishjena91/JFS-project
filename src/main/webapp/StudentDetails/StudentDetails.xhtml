@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:pass="http://xmlns.jcp.org/jsf/passthrough">
+<h:head>
+	<title>Student Registration Form</title>
+	<h:outputScript name="test.js" />
+</h:head>
+<h:body>
+	<h:form id="frmTest">
+	<h:panelGrid columns="4">
+	<h:outputText value="First Name"></h:outputText>
+	<h:inputText id = "first" value="#{studentBean.firstname}">
+	<f:validateLength minimum="6" maximum="10"></f:validateLength>
+	</h:inputText>
+	<h:outputText value="Last Name"></h:outputText>
+	<h:inputText id = "second" value="#{studentBean.lastname}"></h:inputText>
+	<h:outputText value="Password"></h:outputText>
+	<h:inputSecret pass:placeholder = "Min 6 Char">
+	<f:validateLength minimum="6"></f:validateLength>
+	</h:inputSecret>
+	<h:outputText value="Address"></h:outputText>
+	<h:inputTextarea id = "addr" value="#{studentBean.address}"></h:inputTextarea>
+	<h:outputText value="Upload Resume"></h:outputText>
+
+	<br/>
+	<br/>
+	
+	</h:panelGrid>
+	<h:commandButton action="StudentDetails/stdaddform2" value="Next">
+            	</h:commandButton>
+    <br/>
+    <h:commandLink value="Welcome to tBits" action="http://www.tbitsglobal.com/"></h:commandLink>        	
+	<h:graphicImage value="https://www.learnjavaonline.org/static/img/share-logos/learnjavaonline.org.png"></h:graphicImage>
+	</h:form>
+
+</h:body>
+</html>
